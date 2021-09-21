@@ -4,21 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Age prediction app.</title>
+    <title>DeepFeels</title>
 		<link rel="stylesheet" href="../bundle.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-		<h3>Hi there!</h3>
-		<p>Let's test some things</p>
-		<ul>
-			<li>
-				CSS: <span class="success">Ready!</span>
-			</li>
-			<li>
-				JavaScript: <span id="js-test"></span>
-			</li>
-		</ul>
-		<button id="click-to-continue">Redirect to login :)</button>
+		<div class="register-container">
+
+			<div class="title-container">
+				<p class="title">Regístrate una sola vez.</p>
+				<p class="title">Explora varios mundos.</p>
+			</div>
+
+			<div class="register-img">
+				<img src="deep_feels_assets/Login.svg" alt="">
+			</div>
+
+			<div class="form-container">
+				<form action="">
+					<label for="">¿Cual es tu nombre?</label>
+					<input type="text" id="name" placeholder="Nombre">
+					<label for="">Email</label>
+					<input type="email" placeholder="Email">
+					<label for="">Contraseña</label>
+					<input type="password" placeholder="Contraseña">
+				</form>
+			</div>
+
+			<button type="submit">Registrarse</button>
+
+		</div>
 		<script src="../bundle.js"></script>
 	</body>
 </html>
