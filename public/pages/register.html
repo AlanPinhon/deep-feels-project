@@ -22,13 +22,22 @@
 				<img src="deep_feels_assets/Login.svg" alt="">
 			</div>
 
-			<form id="form" action="">
+			<form action="" autocomplete="off">
+				<div class="label-container">
 					<label for="">¿Cual es tu nombre?</label>
 					<input type="text" id="name" name="name" placeholder="Nombre">
+					<p class="message" >Introduce un nombre válido</p>
+				</div>
+				<div class="label-container">
 					<label for="">Email</label>
 					<input type="email" id="email" name="email" placeholder="Email">
+					<p class="message" >Introduce un email válido</p>
+				</div>
+				<div class="label-container">
 					<label for="">Contraseña</label>
 					<input type="password" id="pass" name="password" placeholder="Contraseña">
+					<p class="message" >La contraseña debe tener de 6 a 20 dígitos</p>
+				</div>
 			</form>
 
 			<button type="submit">Registrarse</button>

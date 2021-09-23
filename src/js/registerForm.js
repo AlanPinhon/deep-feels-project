@@ -1,31 +1,61 @@
-// const formulario = document.querySelector('#form');
+const btnRegister = document.querySelector('button');
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#pass');
 
-const emailExpression = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-
-const validarFormulario = () => {
-
-	if(nameInput.value.length < 2){
-		console.log('Ingrese un nombre válido');
-	}
-
-	if(!emailExpression.test(emailInput.value)){
-		console.log('Ingrese un email válido');
-	}
-
-	if(passwordInput.value.length < 6){
-		console.log('La contraseña debe ser mayor a 6 caracteres');
-	}
+const camposValidacion = {
+	name: false,
+	email: false,
+	password: false
 };
 
-const eventListeners = () => {
-	nameInput.addEventListener('blur', validarFormulario);
-	emailInput.addEventListener('blur', validarFormulario);
-	passwordInput.addEventListener('blur', validarFormulario);
+const expresiones = {
+	nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, //Letras y espacios, pueden llevar acentos.
+	password: /^.{6,20}$/, //Password 6 a 20 dígitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 };
 
-export {
-	eventListeners
+const validarFormulario = (e) => {
+	const { nombre, password, correo } = expresiones;
+
+	const campos = {
+		name: validarCampo(nombre , e.target, e.target.nextElementSibling),
+		email: validarCampo(correo, e.target, e.target.nextElementSibling),
+		password: validarCampo(password, e.target, e.target.nextElementSibling)
+	};
+	campos[e.target.name]();
+};
+
+const validarCampo = (expresion, input, message) => () => {
+
+	if(!expresion.test(input.value)){
+		input.classList.remove('active');
+		input.classList.add('error');
+		message.style.display = 'block';
+		camposValidacion[input.name] = false;
+	} else {
+		input.classList.remove('error');
+		input.classList.add('active');
+		message.style.display = 'none';
+		camposValidacion[input.name] = true;
+	}
+
+	const camposValidados =
+		Object.values(camposValidacion).every(value => value);
+
+	if(camposValidados)
+		btnRegister.classList.add('button-active');
+	else
+		btnRegister.classList.remove('button-active');
+
+};
+
+const registerListeners = () => {
+	nameInput.addEventListener('input', validarFormulario);
+	emailInput.addEventListener('input', validarFormulario);
+	passwordInput.addEventListener('input', validarFormulario);
+};
+
+export{
+	registerListeners
 };

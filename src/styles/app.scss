@@ -3,6 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Inter', sans-serif;
+	transition: .2s ease-in-out;
 }
 
 .register-container{
@@ -13,22 +14,25 @@
 	flex-direction: column;
 
 	.title-container{
-		border: 1px solid 221;
 		text-align: center;
 		font-size: 1.38rem;
 		font-weight: 500;
 	}
 
 	.register-img{
-		width: 80%;
-		margin: 30px auto;
+		width: 75%;
+		margin: 2rem auto;
 	}
 
 	form{
 		width: 100%;
 
-		label{
+		.label-container{
 			width: 100%;
+			margin: 1rem 0;
+		}
+
+		label{
 			font-weight: 500;
 		}
 
@@ -40,7 +44,7 @@
 			padding: 12px;
 			font-size: 1rem;
 			color: #333;
-			margin: 5px 0 30px;
+			margin: .5rem 0 0;
 
 		 &::placeholder{
 			 color: #aaa;
@@ -48,9 +52,23 @@
 
 		 &:focus{
 			 outline: none;
-			 border: 1px solid #6d7dd0;
 		 }
 		}
+	}
+
+	.active{
+		border: 1px solid #6d7dd0;
+	}
+
+	.error{
+		border: 1px solid #FC8282;
+	}
+
+	.message{
+		font-weight: 500;
+		font-size: .6rem;
+		text-align: left;
+		display: none;
 	}
 
 	button{
@@ -65,5 +83,14 @@
 		border-radius: 8px;
 		border: none;
 		margin: 2rem auto 0;
+
+		&.button-active{
+			background-color: #6d7dd0;
+			color: #fff;
+
+			&:hover{
+				background-color: #4557b1;
+			}
+		}
 	}
 }
