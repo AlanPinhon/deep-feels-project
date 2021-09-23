@@ -8,7 +8,7 @@
 .register-container{
 	max-width: 480px;
 	margin: 0 auto;
-	padding: 3rem;
+	padding: 3rem 4rem;
 	display: flex;
 	flex-direction: column;
 
@@ -24,7 +24,7 @@
 		margin: 30px auto;
 	}
 
-	.form-container form{
+	form{
 		width: 100%;
 
 		label{
@@ -40,7 +40,7 @@
 			padding: 12px;
 			font-size: 1rem;
 			color: #333;
-			margin: 10px 0;
+			margin: 5px 0 30px;
 
 		 &::placeholder{
 			 color: #aaa;
