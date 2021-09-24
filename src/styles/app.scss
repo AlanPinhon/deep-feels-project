@@ -25,6 +25,9 @@
 	}
 
 	form{
+		display: flex;
+		flex-flow: column;
+		align-items: center;
 		width: 100%;
 
 		.label-container{
@@ -70,27 +73,27 @@
 		text-align: left;
 		display: none;
 	}
+}
 
-	button{
-		width: auto;
-		height: auto;
-		text-align: center;
-		font-size: 1rem;
-		font-weight: 700;
-		background-color: #f3f3f3;
-		color: #aaa;
-		padding: 10px;
-		border-radius: 8px;
-		border: none;
-		margin: 2rem auto 0;
+button{
+	width: auto;
+	height: auto;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 700;
+	background-color: #f3f3f3;
+	color: #aaa;
+	padding: 10px;
+	border-radius: 8px;
+	border: none;
+	margin: 2rem auto 0;
 
-		&.button-active{
-			background-color: #6d7dd0;
-			color: #fff;
+	&.button-active{
+		background-color: #6d7dd0;
+		color: #fff;
 
-			&:hover{
-				background-color: #4557b1;
-			}
+		&:hover{
+			background-color: #4557b1;
 		}
 	}
 }

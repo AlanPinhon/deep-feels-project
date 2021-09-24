@@ -2,6 +2,7 @@ const btnRegister = document.querySelector('button');
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#pass');
+const formulario = document.querySelector('form');
 
 const camposValidacion = {
 	name: false,
@@ -54,6 +55,12 @@ const registerListeners = () => {
 	nameInput.addEventListener('input', validarFormulario);
 	emailInput.addEventListener('input', validarFormulario);
 	passwordInput.addEventListener('input', validarFormulario);
+
+	formulario.addEventListener('submit', (e) => {
+		e.preventDefault();
+
+		console.log('¡Registro Exitoso!');
+	});
 };
 
 export{
