@@ -1,8 +1,12 @@
+import { USER_ID, USER_TOKEN } from "../constants/keysStorage";
+import { newUser } from "./API";
+
 const btnRegister = document.querySelector('button');
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#pass');
 const formulario = document.querySelector('form');
+const msgError = document.querySelector('.message-error');
 
 const camposValidacion = {
 	name: false,
@@ -10,24 +14,17 @@ const camposValidacion = {
 	password: false
 };
 
-const expresiones = {
-	nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, //Letras y espacios, pueden llevar acentos.
-	password: /^.{6,20}$/, //Password 6 a 20 dígitos.
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-};
-
 const validarFormulario = (e) => {
-	const { nombre, password, correo } = expresiones;
 
 	const campos = {
-		name: validarCampo(nombre , e.target, e.target.nextElementSibling),
-		email: validarCampo(correo, e.target, e.target.nextElementSibling),
-		password: validarCampo(password, e.target, e.target.nextElementSibling)
+		name: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, //Letras, espacios y acentos.
+		password: /^.{7,20}$/, //Password 7 a 20 dígitos.
+		email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 	};
-	campos[e.target.name]();
+	validarCampo(campos[e.target.name], e.target, e.target.nextElementSibling);
 };
 
-const validarCampo = (expresion, input, message) => () => {
+const validarCampo = (expresion, input, message) => {
 
 	if(!expresion.test(input.value)){
 		input.classList.remove('active');
@@ -44,11 +41,13 @@ const validarCampo = (expresion, input, message) => () => {
 	const camposValidados =
 		Object.values(camposValidacion).every(value => value);
 
-	if(camposValidados)
+	if(camposValidados){
 		btnRegister.classList.add('button-active');
-	else
+		btnRegister.disabled = false;
+	} else {
 		btnRegister.classList.remove('button-active');
-
+		btnRegister.disabled = true;
+	}
 };
 
 const registerListeners = () => {
@@ -56,10 +55,28 @@ const registerListeners = () => {
 	emailInput.addEventListener('input', validarFormulario);
 	passwordInput.addEventListener('input', validarFormulario);
 
-	formulario.addEventListener('submit', (e) => {
+	formulario.addEventListener('submit', async (e) => {
 		e.preventDefault();
+		const body = {
+			name: nameInput.value,
+			email: emailInput.value,
+			password: passwordInput.value
+		};
 
-		console.log('¡Registro Exitoso!');
+		const result = await newUser(body);
+		if(result.ok) {
+			localStorage.setItem(USER_ID, result.user._id);
+			localStorage.setItem(USER_TOKEN, result.token);
+			btnRegister.innerText = 'Registrando';
+		} else {
+			btnRegister.classList.remove('button-active');
+			btnRegister.disabled = true;
+			msgError.style.display = 'block';
+		}
+
+		setTimeout(() => {
+			msgError.style.display = 'none';
+		}, 2000);
 	});
 };
 
