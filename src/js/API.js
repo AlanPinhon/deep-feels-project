@@ -1,7 +1,7 @@
-const url = 'https://deep-feels-backend.herokuapp.com/user/register';
 
-export const newUser = async data => {
+export const useFetch = async (endpoint ,data) => {
 	try {
+		const url = `https://deep-feels-backend.herokuapp.com/${endpoint}`;
 		const response = await fetch(url, {
 			method: 'POST',
 			body: JSON.stringify(data),

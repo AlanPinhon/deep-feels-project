@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 3rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .title-container {
+  text-align: center;
+  font-size: 1.38rem;
+  font-weight: 500;
+}
+
+.container .title-container .title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.container .title-container .copy-container {
+  margin: 1rem auto 0;
+}
+
+.container .title-container .copy-container .copy {
+  font-size: .81rem;
+  font-weight: 300;
+}
+
+.container .register-img {
+  width: 75%;
+  margin: 2rem auto;
+}
+
+.container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.container form .label-container {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.container form label {
+  font-weight: 500;
+}
+
+.container form input {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  color: #333;
+  margin: .5rem 0 0;
+}
+
+.container form input::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+.container form input:-ms-input-placeholder {
+  color: #aaa;
+}
+
+.container form input::-ms-input-placeholder {
+  color: #aaa;
+}
+
+.container form input::placeholder {
+  color: #aaa;
+}
+
+.container form input:focus {
+  outline: none;
+}
+
+.container .active {
+  border: 1px solid #6d7dd0;
+}
+
+.container .error {
+  border: 1px solid #FC8282;
+}
+
+.container .message {
+  font-weight: 500;
+  font-size: .6rem;
+  text-align: left;
+  display: none;
+}
+
+.message-error {
+  color: red;
+  font-weight: 700;
+  display: none;
+  text-align: center;
+}
+
+button {
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-size: .9rem;
+  font-weight: 700;
+  background-color: #f3f3f3;
+  color: #aaa;
+  padding: .9rem;
+  border-radius: 8px;
+  border: none;
+  margin: 2rem auto 0;
+}
+
+button.button-active {
+  background-color: #6d7dd0;
+  color: #fff;
+}
+
+button.button-active:hover {
+  background-color: #4557b1;
+}
+/*# sourceMappingURL=app.css.map */

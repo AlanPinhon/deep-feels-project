@@ -1,5 +1,6 @@
+import { endpoints } from "../constants/endpoints";
 import { USER_ID, USER_TOKEN } from "../constants/keysStorage";
-import { newUser } from "./API";
+import { useFetch } from "./API";
 
 const btnRegister = document.querySelector('button');
 const nameInput = document.querySelector('#name');
@@ -63,7 +64,7 @@ const registerListeners = () => {
 			password: passwordInput.value
 		};
 
-		const result = await newUser(body);
+		const result = await useFetch (endpoints.register ,body);
 		if(result.ok) {
 			localStorage.setItem(USER_ID, result.user._id);
 			localStorage.setItem(USER_TOKEN, result.token);
@@ -81,5 +82,7 @@ const registerListeners = () => {
 };
 
 export{
-	registerListeners
+	registerListeners,
+	validarCampo,
+	camposValidacion
 };
