@@ -64,14 +64,23 @@ const registerListeners = () => {
 			password: passwordInput.value
 		};
 
+		// Loader to prevent many click while request is "in-process"
+		btnRegister.innerHTML = 'Registrando...';
+		btnRegister.disabled = true;
+
 		const result = await useFetch (endpoints.register ,body);
 		if(result.ok) {
 			localStorage.setItem(USER_ID, result.user._id);
 			localStorage.setItem(USER_TOKEN, result.token);
-			btnRegister.innerText = 'Registrando';
+			btnRegister.innerText = 'Registrado';
 		} else {
 			btnRegister.classList.remove('button-active');
 			btnRegister.disabled = true;
+
+			// If request fails, we need to retrieve
+			// "Registrar" instead "Registrando...":
+			btnRegister.innerText = 'Registrar';
+
 			msgError.style.display = 'block';
 		}
 
@@ -80,9 +89,4 @@ const registerListeners = () => {
 		}, 2000);
 	});
 };
-
-export{
-	registerListeners,
-	validarCampo,
-	camposValidacion
-};
+registerListeners();
