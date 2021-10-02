@@ -9,13 +9,19 @@ const scssPlugin 	= require('esbuild-plugin-sass');
 		// Bundles JavaScript.
 		bundle: true,
 		// Bundles JavaScript from (see `outfile`).
-		entryPoints: ["src/app.js"],
+		entryPoints: [
+			"src/app.js",
+			"src/js/login.js",
+			"src/js/registerForm.js",
+			"src/js/userMood.js",
+			"src/js/homePlayer.js",
+		],
 		// Uses incremental compilation (see `chokidar.on`).
 		incremental: true,
 		// Removes whitespace, etc. depending on `NODE_ENV=...`.
 		minify: process.env.NODE_ENV === "production",
 		// Bundles JavaScript to (see `entryPoints`).
-		outfile: "public/bundle.js",
+		outdir: "public/bundle",
 		// Adding SCSS pluging compiler
 		plugins: [scssPlugin()]
 	});
