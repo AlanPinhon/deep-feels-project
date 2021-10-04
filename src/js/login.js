@@ -9,13 +9,13 @@ const btnLogin = document.querySelector('button');
 const alertError = document.querySelector('.message-error');
 
 const login = () => {
-	if(emailLogin.value.length <= 0) {
+	if(!emailLogin.value) {
 		emailLogin.classList.remove('active');
 	} else {
 		emailLogin.classList.add('active');
 	}
 
-	if(passwordLogin.value.length <= 3) {
+	if(!passwordLogin.value) {
 		passwordLogin.classList.remove('active');
 		btnLogin.classList.remove('button-active');
 		btnLogin.disabled = true;
@@ -38,14 +38,21 @@ const loginListeners = () => {
 			password: passwordLogin.value
 		};
 
+		// Text changes in-loading phase should change before
+		// that request will be fired:
+		btnLogin.innerText = 'Iniciando sesión...';
+		btnLogin.disabled = true;
+
 		const loginResult = await useFetch(endpoints.login, inputs);
+
 		if(loginResult.ok){
 			console.log(loginResult);
 			localStorage.setItem(USER_ID, loginResult.user._id);
 			localStorage.setItem(USER_TOKEN, loginResult.token);
-			btnLogin.innerText = 'Iniciando sesión';
-			btnLogin.disabled = true;
 		} else {
+			//If something fails, we need to retrieve button state as before
+			btnLogin.innerText = 'Iniciar sesión';
+			btnLogin.disabled = false;
 			alertError.style.display = 'block';
 		}
 
@@ -55,6 +62,4 @@ const loginListeners = () => {
 	});
 };
 
-export{
-	loginListeners
-};
+loginListeners();
