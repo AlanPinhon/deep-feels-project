@@ -1,6 +1,7 @@
 import { endpoints } from "../constants/endpoints";
 import { useFetch } from "./API";
 import { USER_ID, USER_TOKEN } from "../constants/keysStorage";
+import { redirect } from "./redirect";
 
 const formLogin = document.querySelector('form');
 const emailLogin = document.querySelector('#email');
@@ -59,6 +60,11 @@ const loginListeners = () => {
 		setTimeout(() => {
 			alertError.style.display = 'none';
 		}, 2000);
+	});
+
+	const linkToLogin = document.querySelector('.link');
+	linkToLogin.addEventListener('click', () => {
+		redirect('register');
 	});
 };
 

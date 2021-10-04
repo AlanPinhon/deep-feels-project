@@ -1,6 +1,7 @@
 import { endpoints } from "../constants/endpoints";
 import { USER_ID, USER_TOKEN } from "../constants/keysStorage";
 import { useFetch } from "./API";
+import { redirect } from "./redirect";
 
 const btnRegister = document.querySelector('button');
 const nameInput = document.querySelector('#name');
@@ -87,6 +88,11 @@ const registerListeners = () => {
 		setTimeout(() => {
 			msgError.style.display = 'none';
 		}, 2000);
+	});
+
+	const linkToLogin = document.querySelector('.link');
+	linkToLogin.addEventListener('click', () => {
+		redirect('login');
 	});
 };
 registerListeners();
