@@ -6,32 +6,23 @@
 	transition: .2s ease-in-out;
 }
 
+:root{
+	--title-size: 1.5rem;
+	--copy-size: .81rem;
+	--bolder-text: 700;
+	--medium-text: 500;
+	--regular-text: 400;
+	--light-text: 300;
+	--primary-color: #6d7dd0;
+	--primary-color-hover: #4557b1;
+}
+
 .container{
 	max-width: 480px;
 	margin: 0 auto;
 	padding: 3rem 4rem;
 	display: flex;
 	flex-direction: column;
-
-	.title-container{
-		text-align: center;
-		font-size: 1.38rem;
-		font-weight: 500;
-
-		.title{
-			font-size: 1.5rem;
-			font-weight: 500;
-		}
-
-		.copy-container{
-			margin: 1rem auto 0;
-
-			.copy{
-				font-size: .81rem;
-				font-weight: 300;
-			}
-		}
-	}
 
 	.register-img{
 		width: 75%;
@@ -50,7 +41,7 @@
 		}
 
 		label{
-			font-weight: 500;
+			font-weight: var(--medium-text);
 		}
 
 		input{
@@ -74,7 +65,7 @@
 	}
 
 	.active{
-		border: 1px solid #6d7dd0;
+		border: 1px solid var(--primary-color);
 	}
 
 	.error{
@@ -82,7 +73,7 @@
 	}
 
 	.message{
-		font-weight: 500;
+		font-weight: var(--medium-text);
 		font-size: .6rem;
 		text-align: left;
 		display: none;
@@ -99,9 +90,35 @@
 	}
 }
 
+.text-container{
+	margin: .75rem auto;
+
+	&.align-right{
+		text-align: right;
+	}
+
+	&.align-center{
+		text-align: center;
+	}
+
+	&.align-left{
+		text-align: left;
+	}
+}
+
+.title{
+	font-size: var(--title-size);
+	font-weight: var(--medium-text);
+}
+
+.copy{
+	font-size: var(--copy-size);
+	font-weight: var(--light-text);
+}
+
 .message-error{
 	color: red;
-	font-weight: 700;
+	font-weight: var(--bolder-text);
 	display: none;
 	text-align: center;
 }
@@ -112,7 +129,7 @@ button{
 	text-align: center;
 	padding: .9rem;
 	font-size: .9rem;
-	font-weight: 700;
+	font-weight: var(--bolder-text);
 	border-radius: 8px;
 	border: none;
 	margin: 2rem auto 0;
@@ -123,24 +140,26 @@ button{
 	}
 
 	&.button-active{
-		background-color: #6d7dd0;
+		background-color: var(--primary-color);
 		color: #fff;
+		cursor: pointer;
 
 		&:hover{
-			background-color: #4557b1;
+			background-color: var(--primary-color-hover);
 		}
 	}
 
 	&.link{
 		background: none;
-		color: #6d7dd0;
-		font-weight: 700;
+		color: var(--primary-color);
+		font-weight: var(--bolder-text);
 		padding: 0;
 		margin: 0 .5rem;
 		cursor: pointer;
 
 		&:hover{
 			text-decoration: underline;
+			color: var(--primary-color-hover);
 		}
 	}
 }
