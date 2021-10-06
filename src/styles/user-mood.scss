@@ -1,0 +1,33 @@
+.background-moods{
+	background-color: #FAFAFF;
+}
+
+.container-moods{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 3rem 1rem;
+
+	.container-mood{
+		display: flex;
+		flex-direction: column;
+		background-color: white;
+		padding: 1rem;
+		margin: 1rem;
+		width: 40%;
+		height: 10rem;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: 6px;
+		box-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.05);
+
+		&:hover{
+			box-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+		}
+
+		img{
+			height: 70%;
+		}
+	}
+}

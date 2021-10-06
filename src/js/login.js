@@ -44,7 +44,7 @@ const loginListeners = () => {
 		btnLogin.innerText = 'Iniciando sesión...';
 		btnLogin.disabled = true;
 
-		const loginResult = await useFetch(endpoints.login, inputs);
+		const loginResult = await useFetch(endpoints.login, inputs , 'POST');
 
 		if(loginResult.ok){
 			console.log(loginResult);

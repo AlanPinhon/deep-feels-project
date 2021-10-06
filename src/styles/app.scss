@@ -6,16 +6,15 @@
 	transition: .2s ease-in-out;
 }
 
-:root{
-	--title-size: 1.5rem;
-	--copy-size: .81rem;
-	--bolder-text: 700;
-	--medium-text: 500;
-	--regular-text: 400;
-	--light-text: 300;
-	--primary-color: #6d7dd0;
-	--primary-color-hover: #4557b1;
-}
+$title-size: 1.5rem;
+$copy-size: .81rem;
+$bolder-text: 700;
+$medium-text: 500;
+$regular-text: 400;
+$light-text: 300;
+$primary-color: #6d7dd0;
+$primary-color-hover: #4557b1;
+$alert-color: #F5BD05;
 
 .container{
 	max-width: 480px;
@@ -41,7 +40,7 @@
 		}
 
 		label{
-			font-weight: var(--medium-text);
+			font-weight: $medium-text;
 		}
 
 		input{
@@ -65,7 +64,7 @@
 	}
 
 	.active{
-		border: 1px solid var(--primary-color);
+		border: 1px solid $primary-color;
 	}
 
 	.error{
@@ -73,7 +72,7 @@
 	}
 
 	.message{
-		font-weight: var(--medium-text);
+		font-weight: $medium-text;
 		font-size: .6rem;
 		text-align: left;
 		display: none;
@@ -91,7 +90,7 @@
 }
 
 .text-container{
-	margin: .75rem auto;
+	margin: .75rem 0;
 
 	&.align-right{
 		text-align: right;
@@ -107,18 +106,18 @@
 }
 
 .title{
-	font-size: var(--title-size);
-	font-weight: var(--medium-text);
+	font-size: $title-size;
+	font-weight: $medium-text;
 }
 
 .copy{
-	font-size: var(--copy-size);
-	font-weight: var(--light-text);
+	font-size: $copy-size;
+	font-weight: $light-text;
 }
 
 .message-error{
 	color: red;
-	font-weight: var(--bolder-text);
+	font-weight: $bolder-text;
 	display: none;
 	text-align: center;
 }
@@ -129,10 +128,11 @@ button{
 	text-align: center;
 	padding: .9rem;
 	font-size: .9rem;
-	font-weight: var(--bolder-text);
+	font-weight: $bolder-text;
 	border-radius: 8px;
 	border: none;
 	margin: 2rem auto 0;
+	cursor: pointer;
 
 	&:disabled{
 		background-color: #f3f3f3;
@@ -140,26 +140,33 @@ button{
 	}
 
 	&.button-active{
-		background-color: var(--primary-color);
+		background-color: $primary-color;
 		color: #fff;
-		cursor: pointer;
 
 		&:hover{
-			background-color: var(--primary-color-hover);
+			background-color: $primary-color-hover;
+		}
+	}
+
+	&.button-alert{
+		background-color: $alert-color;
+		color: black;
+
+		&:hover{
+			background-color: lighten($alert-color, 10%);
 		}
 	}
 
 	&.link{
 		background: none;
-		color: var(--primary-color);
-		font-weight: var(--bolder-text);
+		color: $primary-color;
+		font-weight: $bolder-text;
 		padding: 0;
 		margin: 0 .5rem;
-		cursor: pointer;
 
 		&:hover{
 			text-decoration: underline;
-			color: var(--primary-color-hover);
+			color: $primary-color-hover;
 		}
 	}
 }

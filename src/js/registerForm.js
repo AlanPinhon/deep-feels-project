@@ -69,7 +69,7 @@ const registerListeners = () => {
 		btnRegister.innerHTML = 'Registrando...';
 		btnRegister.disabled = true;
 
-		const result = await useFetch (endpoints.register ,body);
+		const result = await useFetch (endpoints.register , body, 'POST');
 		if(result.ok) {
 			localStorage.setItem(USER_ID, result.user._id);
 			localStorage.setItem(USER_TOKEN, result.token);
