@@ -1,33 +1,51 @@
 .background-moods{
-	background-color: #FAFAFF;
+	background-color: #f1f1fd;
+}
+
+.container-select-mood{
+	max-width: 480px;
+	margin: 0 auto;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .container-moods{
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	padding: 3rem 1rem;
+	margin: 0 auto;
+	padding: 3rem 0;
+	justify-content:center;
 
 	.container-mood{
 		display: flex;
+		position: relative;
 		flex-direction: column;
 		background-color: white;
 		padding: 1rem;
 		margin: 1rem;
-		width: 40%;
-		height: 10rem;
+		width: 7rem;
+		height: 9rem;
 		justify-content: space-between;
 		align-items: center;
 		border-radius: 6px;
-		box-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.05);
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.08);
 
 		&:hover{
-			box-shadow: 0 9px 19px 0 rgba(0, 0, 0, 0.1);
+			box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.14);
 			cursor: pointer;
 		}
 
 		img{
-			height: 70%;
+			height: 65%;
+		}
+
+		.check-active{
+			position: absolute;
+			width: 24%;
+			top: -2.6rem;
+			left: 5.9rem;
 		}
 	}
 }

@@ -6,7 +6,7 @@ const showMoods = (moods) => {
 	const containerMoods = document.querySelector('.container-moods');
 
 	moods.forEach( mood => {
-		const { icon, name } = mood;
+		const { icon, name, _id } = mood;
 		const containerMood = document.createElement('div');
 		const imgMood = document.createElement('img');
 		const nameMood = document.createElement('p');
@@ -19,6 +19,17 @@ const showMoods = (moods) => {
 		containerMood.appendChild(imgMood);
 		containerMood.appendChild(nameMood);
 		containerMoods.appendChild(containerMood);
+
+		containerMood.addEventListener('click', () => {
+			const arrayId = [];
+
+			const check = document.createElement('img');
+			check.setAttribute('src', '../pages/deep_feels_assets/Check.svg');
+			check.classList.add('check-active');
+			containerMood.appendChild(check);
+			arrayId.push(_id);
+			console.log(arrayId);
+		});
 	});
 };
 
