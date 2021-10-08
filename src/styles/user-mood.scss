@@ -1,5 +1,5 @@
 .background-moods{
-	background-color: #f1f1fd;
+	background-color: #f4f4fa;
 }
 
 .container-select-mood{
@@ -23,29 +23,32 @@
 		position: relative;
 		flex-direction: column;
 		background-color: white;
-		padding: 1rem;
-		margin: 1rem;
-		width: 7rem;
-		height: 9rem;
+		padding: 1.3rem;
+		margin: 1.5rem 1rem;
 		justify-content: space-between;
 		align-items: center;
 		border-radius: 6px;
-		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.08);
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.02);
 
-		&:hover{
-			box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.14);
-			cursor: pointer;
+		.img-container{
+			width: 5rem;
+			height: 5rem;
+			margin-bottom: 1rem;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
 		}
 
-		img{
-			height: 65%;
+		&:hover{
+			box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
 		}
 
 		.check-active{
 			position: absolute;
 			width: 24%;
-			top: -2.6rem;
-			left: 5.9rem;
+			top: -1rem;
+			right: -.5rem;
 		}
 	}
 }
