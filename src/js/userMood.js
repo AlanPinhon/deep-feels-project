@@ -1,9 +1,18 @@
 import { useFetch } from "./API";
 import { endpoints } from "../constants/endpoints";
+import { USER_ID } from "../constants/keysStorage";
 
 const btnMood = document.querySelector('.button-alert');
-const sendMoods = () => {
-	console.log('Enviando datos');
+
+let arrayId = [];
+
+const sendMoods = async () => {
+	const userID = localStorage.getItem(USER_ID);
+	const selectedMoods =
+	await useFetch(endpoints.userMood.replace(':id', userID), arrayId, 'PUT');
+
+	console.log(selectedMoods);
+	console.log(arrayId);
 };
 
 const goHome = () => {
@@ -13,7 +22,6 @@ const goHome = () => {
 const showMoods = (moods) => {
 
 	const containerMoods = document.querySelector('.container-moods');
-	let arrayId = [];
 
 	moods.forEach( mood => {
 		const { icon, name, _id } = mood;

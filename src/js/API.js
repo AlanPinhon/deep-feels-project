@@ -1,3 +1,4 @@
+// import { USER_TOKEN } from "../constants/keysStorage";
 
 export const useFetch = async (endpoint ,data, method = 'GET') => {
 	try {
@@ -6,7 +7,7 @@ export const useFetch = async (endpoint ,data, method = 'GET') => {
 		const fetchOptions = {
 			method,
 			headers: {
-				'Content-Type' : 'application/json'
+				'Content-Type' : 'application/json',
 			},
 		};
 
@@ -14,7 +15,7 @@ export const useFetch = async (endpoint ,data, method = 'GET') => {
 			fetchOptions.body = JSON.stringify(data);
 		}
 
-		const response = await fetch(url);
+		const response = await fetch(url, fetchOptions);
 		const result = await response.json();
 		return result;
 	} catch (error) {
