@@ -9,7 +9,12 @@ let arrayId = [];
 const sendMoods = async () => {
 	const userID = localStorage.getItem(USER_ID);
 	const selectedMoods =
-	await useFetch(endpoints.userMood.replace(':id', userID), arrayId, 'PUT');
+	await useFetch(
+		endpoints.userMood.replace(':id', userID),
+		arrayId,
+		'PUT',
+		true
+	);
 
 	console.log(selectedMoods);
 	console.log(arrayId);
@@ -64,7 +69,6 @@ const showMoods = (moods) => {
 			} else {
 				containerMood.classList.remove('selected');
 				containerMood.removeChild(check);
-				//Eliminar elementos duplicados en un array
 				arrayId = arrayId.filter( id => id !== _id);
 			}
 
