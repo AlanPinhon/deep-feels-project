@@ -168,6 +168,11 @@ button{
 		padding: 0;
 		margin: 0 .5rem;
 
+		&.forgot{
+			margin-top: 1rem;
+			font-size: $copy-size;
+		}
+
 		&:hover{
 			text-decoration: underline;
 			color: $primary-color-hover;

@@ -62,9 +62,14 @@ const loginListeners = () => {
 		}, 2000);
 	});
 
-	const linkToLogin = document.querySelector('.link');
+	const linkToLogin = document.querySelector('.register-page');
 	linkToLogin.addEventListener('click', () => {
 		redirect('register');
+	});
+
+	const linkPassword = document.querySelector('.forgot');
+	linkPassword.addEventListener('click', () => {
+		console.log('Página de recuperación de contraseña');
 	});
 };
 
