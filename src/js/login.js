@@ -44,7 +44,7 @@ const loginListeners = () => {
 		btnLogin.innerText = 'Iniciando sesión...';
 		btnLogin.disabled = true;
 
-		const loginResult = await useFetch(endpoints.login, inputs);
+		const loginResult = await useFetch(endpoints.login, inputs , 'POST');
 
 		if(loginResult.ok){
 			console.log(loginResult);
@@ -62,9 +62,14 @@ const loginListeners = () => {
 		}, 2000);
 	});
 
-	const linkToLogin = document.querySelector('.link');
+	const linkToLogin = document.querySelector('.register-page');
 	linkToLogin.addEventListener('click', () => {
 		redirect('register');
+	});
+
+	const linkPassword = document.querySelector('.forgot');
+	linkPassword.addEventListener('click', () => {
+		console.log('Página de recuperación de contraseña');
 	});
 };
 

@@ -1,0 +1,54 @@
+.background-moods{
+	background-color: #f4f4fa;
+}
+
+.container-select-mood{
+	max-width: 480px;
+	margin: 0 auto;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.container-moods{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0 auto;
+	padding: 2rem 0;
+	justify-content:center;
+
+	.container-mood{
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		background-color: white;
+		padding: 1.3rem;
+		margin: 1.5rem 1rem;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: 6px;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.02);
+
+		.img-container{
+			width: 5rem;
+			height: 5rem;
+			margin-bottom: 1rem;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		&:hover{
+			box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+		}
+
+		.check-active{
+			position: absolute;
+			width: 24%;
+			top: -1rem;
+			right: -.5rem;
+		}
+	}
+}
