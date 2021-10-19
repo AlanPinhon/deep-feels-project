@@ -1,0 +1,27 @@
+.back-pass-recovery{
+	background-color: #f4f4fa
+}
+
+.email-form-img{
+	width: 30%;
+	margin: 2rem auto;
+}
+
+.recov-pass-form{
+	margin-top: 1rem;
+}
+
+.container-link-login{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-top: 2rem;
+
+	.login-copy{
+		font-size: .85rem;
+	}
+
+	.link{
+		margin-top: .5rem;
+	}
+}

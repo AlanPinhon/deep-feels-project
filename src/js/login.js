@@ -69,7 +69,7 @@ const loginListeners = () => {
 
 	const linkPassword = document.querySelector('.forgot');
 	linkPassword.addEventListener('click', () => {
-		console.log('Página de recuperación de contraseña');
+		redirect('forgot-password');
 	});
 };
 

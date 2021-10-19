@@ -39,7 +39,7 @@ $alert-color: #F5BD05;
 		width: 100%;
 
 		.label-container{
-			width: 100%;
+			width: 80%;
 			margin: 1rem 0;
 		}
 
@@ -170,6 +170,8 @@ button{
 
 		&.forgot{
 			margin-top: 1rem;
+			color: black;
+			float: right;
 			font-size: $copy-size;
 		}
 
