@@ -86,7 +86,7 @@ const registerListeners = () => {
 		}, 2000);
 	});
 
-	const linkToLogin = document.querySelector('.link');
+	const linkToLogin = document.querySelector('.login');
 	linkToLogin.addEventListener('click', () => {
 		redirect('login');
 	});

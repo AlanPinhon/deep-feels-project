@@ -15,6 +15,7 @@ const scssPlugin 	= require('esbuild-plugin-sass');
 			"src/js/registerForm.js",
 			"src/js/userMood.js",
 			"src/js/homePlayer.js",
+			"src/js/forgotPassword.js",
 		],
 		// Uses incremental compilation (see `chokidar.on`).
 		incremental: true,
