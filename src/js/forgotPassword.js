@@ -30,6 +30,8 @@ const passRecovListeners = () => {
 		// Prevent any click while request is "in-process"
 		btnContinue.innerHTML = 'Enviando...';
 		btnContinue.disabled = true;
+
+		redirect('email-sent');
 	});
 
 	const linkToLogin = document.querySelector('.login');
