@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="./deep_feels_assets/deep-feels-logo/moon_deep_feels_purple.svg" type="image/x-icon">
+	<title>Recuperación de contraseña</title>
+	<link rel="stylesheet" href="../bundle/app.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="back-pass-recovery">
+	<div class="container-email-link">
+
+		<div class="email-link-img">
+			<img src="deep_feels_assets/password_recovery _assets/Locker.png" alt="">
+		</div>
+
+		<div class="text-container">
+			<h2 class="title">¡Hola {{name}}!</h2>
+		</div>
+
+		<div class="text-container">
+			<p class="copy">Estás a un paso para poder restablecer tu
+				<span class="line-break">contraseña. Sólo da click en el siguiente</span>
+				<span class="line-break">enlace:</span>
+			</p>
+		</div>
+
+		<a href="{{link}}">Restablecer contraseña</a>
+
+		<div class="container-logo">
+			<a href="#" class="deep-logo">
+				<img src="deep_feels_assets/deep-feels-logo/large_deep_feels_white.svg" alt="">
+			</a>
+		</div>
+	</div>
+
+
+	<!-- Include Handlebars from a CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+	<script>
+		// compile the template
+		var template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+		// execute the compiled template and print the output to the console
+		console.log(template({ doesWhat: "rocks!" }));
+	</script>
+</body>
+</html>
