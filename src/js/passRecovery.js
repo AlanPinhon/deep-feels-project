@@ -1,4 +1,5 @@
 import { campos } from "../constants/validators";
+import { redirect } from "./redirect";
 
 const newPass = document.querySelector('#new-pass');
 const confirmPass = document.querySelector('#confirm-pass');
@@ -41,6 +42,8 @@ const recoveryPassListeners = () => {
 		console.log('Contraseña restablecida');
 
 		btnRestore.disabled = true;
+
+		redirect('password-reset');
 	});
 };
 
