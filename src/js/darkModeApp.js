@@ -1,9 +1,6 @@
 const momentDay = document.querySelector('.moment-day');
 const logoDeep = document.querySelector('.logo-container a img');
 const date = new Date();
-
-console.log(date.setHours(6));
-
 // Cambia la interfaz al modo obscuro al anochecer y viceversa
 if(date.getHours() >= 19 || date.getHours() <= 6){
 	document.body.classList.toggle('dark-mode');
