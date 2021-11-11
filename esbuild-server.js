@@ -18,7 +18,8 @@ const scssPlugin 	= require('esbuild-plugin-sass');
 			"src/js/forgotPassword.js",
 			"src/js/emailSent.js",
 			"src/js/passRecovery.js",
-			"src/js/redirectLogin.js"
+			"src/js/redirectLogin.js",
+			"src/js/darkModeApp.js"
 		],
 		// Uses incremental compilation (see `chokidar.on`).
 		incremental: true,

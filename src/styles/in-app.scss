@@ -1,0 +1,17 @@
+.light-mode{
+	background-color: #f4f4fa;
+
+	&.dark-mode{
+		background-color: #232027;
+		color: #fff;
+	}
+}
+
+.logo-container{
+	width: 30%;
+	margin-bottom: 1rem;
+}
+
+.copy-container{
+	margin: .5rem 0;
+}
