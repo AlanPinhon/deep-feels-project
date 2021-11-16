@@ -50,6 +50,7 @@ const loginListeners = () => {
 			console.log(loginResult);
 			localStorage.setItem(USER_ID, loginResult.user._id);
 			localStorage.setItem(USER_TOKEN, loginResult.token);
+			redirect('in-app');
 		} else {
 			//If something fails, we need to retrieve button state as before
 			btnLogin.innerText = 'Iniciar sesión';
@@ -69,7 +70,7 @@ const loginListeners = () => {
 
 	const linkPassword = document.querySelector('.forgot');
 	linkPassword.addEventListener('click', () => {
-		console.log('Página de recuperación de contraseña');
+		redirect('forgot-password');
 	});
 };
 

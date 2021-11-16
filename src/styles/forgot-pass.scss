@@ -1,0 +1,88 @@
+// Email filled screen styles
+.back-pass-recovery{
+	background-color: #f4f4fa
+}
+
+.email-form-img{
+	width: 30%;
+	margin: 2rem auto;
+}
+
+.recov-pass-form{
+	margin-top: 1rem;
+}
+
+.container-link-login{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 2rem;
+
+	.login-copy{
+		font-size: .85rem;
+	}
+
+	.link{
+		margin-top: .5rem;
+	}
+}
+
+// Email sent screen styles
+
+.container-email-sent{
+	max-width: 480px;
+	margin: 0 auto;
+	padding: 10rem 3rem;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+
+	.msg-fwd-email{
+		position: absolute;
+		top: 0;
+		display: flex;
+		background: #fff;
+		border-radius: .5rem;
+		padding: .75rem 1.2rem;
+		opacity: 0;
+		transition: .5s ease-in-out;
+
+		&.active{
+			top: 7rem;
+			opacity: 1;
+		}
+
+		img{
+			width: 1.7rem;
+			margin-right: 1rem;
+		}
+	}
+
+	.email-sent-img{
+		width: 30%;
+		margin: 2rem auto;
+	}
+}
+
+// Recovery password screen styles
+
+.pass-recovery-img{
+	width: 20%;
+	margin: 2rem auto;
+}
+
+// Password Reset screen styles
+
+.container-pass-reset{
+	max-width: 480px;
+	margin: 0 auto;
+	padding: 10rem 3rem;
+	display: flex;
+	flex-direction: column;
+
+	.pass-reset-img{
+		width: 25%;
+		margin: 2rem auto;
+	}
+}

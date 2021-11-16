@@ -1,7 +1,9 @@
 import { endpoints } from "../constants/endpoints";
 import { USER_ID, USER_TOKEN } from "../constants/keysStorage";
+import { campos } from "../constants/validators";
 import { useFetch } from "./API";
 import { redirect } from "./redirect";
+
 
 const btnRegister = document.querySelector('button');
 const nameInput = document.querySelector('#name');
@@ -17,12 +19,6 @@ const camposValidacion = {
 };
 
 const validarFormulario = (e) => {
-
-	const campos = {
-		name: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, //Letras, espacios y acentos.
-		password: /^.{7,20}$/, //Password 7 a 20 dígitos.
-		email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-	};
 	validarCampo(campos[e.target.name], e.target, e.target.nextElementSibling);
 };
 
@@ -90,7 +86,7 @@ const registerListeners = () => {
 		}, 2000);
 	});
 
-	const linkToLogin = document.querySelector('.link');
+	const linkToLogin = document.querySelector('.login');
 	linkToLogin.addEventListener('click', () => {
 		redirect('login');
 	});
