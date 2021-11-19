@@ -12,13 +12,17 @@
 </head>
 <body class="light-mode">
     <div class="container">
-      <div class="logo-container">
-          <a href="#">
-						<img class="logo" src="./deep_feels_assets/deep-feels-logo/large_deep_feels_purple.svg">
-					</a>
-      </div>
+      <header>
+				<div class="logo-container">
+					<img class="logo" src="./deep_feels_assets/deep-feels-logo/large_deep_feels_purple.svg">
+      	</div>
 
-      <h2 class="title">Hola Alan, <span class="line-break moment-day">Buenos días.</span></h2>
+				<div id="account-settings" class="profile-settings-container">
+					<img src="./deep_feels_assets/settings_profile/bxs-user.svg" alt="">
+				</div>
+			</header>
+
+      <h2 class="title">Hola <span id="user-name"></span>, <span class="line-break moment-day">Buenos días.</span></h2>
       <div class="copy-container">
 				<p class="copy">Es un gusto tenerte de vuelta,<span class="line-break">Tenemos nuevos sonidos para ti.</span></p>
 			</div>
@@ -26,6 +30,7 @@
 
 		<div class="audios-container"></div>
 
+		<script src="../bundle/js/inApp.js"></script>
     <script src="../bundle/js/darkModeApp.js"></script>
 </body>
 </html>

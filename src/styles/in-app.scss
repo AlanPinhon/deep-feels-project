@@ -7,9 +7,29 @@
 	}
 }
 
-.logo-container{
-	width: 30%;
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 1rem;
+
+	.logo-container{
+		width: 7rem;
+	}
+
+	.profile-settings-container{
+		display: flex;
+		background-color: #6d7dd0;
+		padding: .8rem;
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+
+		img{
+			width: 1rem;
+		}
+	}
 }
 
 .copy-container{

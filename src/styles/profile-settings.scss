@@ -16,7 +16,18 @@
 
 	.arrow-container{
 		position: absolute;
+		line-height: .1rem;
 		top: 2.2rem;
+
+		.back-to-home{
+			padding: .35rem;
+		}
+
+		&:hover{
+			background-color: #cfd4ee;
+			border-radius: 5rem;
+		}
+
 	}
 
 	.profile-img{
@@ -29,10 +40,11 @@
 		.camera-img{
 			position: absolute;
 			background-color: #fff;
-			padding: .75rem;
+			padding: .65rem;
 			border-radius: 50%;
 			bottom: 0rem;
 			right: 0rem;
+			cursor: pointer;
 		}
 	}
 
@@ -76,7 +88,15 @@
 			&.error{
 				border: 1px solid #FC8282;
 			}
+		}
 
+		.cancel{
+			background: none;
+			color: red;
+			font-weight: 700;
+			font-size: .9rem;
+			margin-top: 1rem;
+			cursor: pointer;
 		}
 	}
 

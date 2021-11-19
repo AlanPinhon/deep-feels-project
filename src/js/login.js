@@ -1,6 +1,6 @@
 import { endpoints } from "../constants/endpoints";
 import { useFetch } from "./API";
-import { USER_ID, USER_TOKEN } from "../constants/keysStorage";
+import { USER_ID, USER_TOKEN, USER_DATA } from "../constants/keysStorage";
 import { redirect } from "./redirect";
 
 const formLogin = document.querySelector('form');
@@ -50,6 +50,7 @@ const loginListeners = () => {
 			console.log(loginResult);
 			localStorage.setItem(USER_ID, loginResult.user._id);
 			localStorage.setItem(USER_TOKEN, loginResult.token);
+			localStorage.setItem(USER_DATA, JSON.stringify(loginResult.user));
 			redirect('in-app');
 		} else {
 			//If something fails, we need to retrieve button state as before
