@@ -27,16 +27,18 @@
 			<img class="back-to-home" src="./deep_feels_assets/settings_profile/bx-arrow-back.svg">
 		</div>
 
-		<div class="profile-img">
-			<img src="./deep_feels_assets/settings_profile/bxs-user.svg" alt="">
-
-			<div class="camera-img">
-				<img src="./deep_feels_assets/settings_profile/bx-camera.svg" alt="">
-			</div>
-		</div>
-
-
 		<form class="profile-form" autocomplete="off">
+
+			<div class="profile-img">
+
+				<img class="preview" src="./deep_feels_assets/settings_profile/bxs-user.svg" alt="">
+
+				<div role="button" class="camera-img">
+					<label class="upload-img" for="file-up"><img src="./deep_feels_assets/settings_profile/bx-camera.svg" alt=""></label>
+					<input id="file-up" class="file" accept="image/*" type="file">
+				</div>
+
+			</div>
 
 			<div class="label-container">
 				<label for="">Nombre</label>
@@ -56,6 +58,7 @@
 		</form>
 
 	</div>
+
 
   <script src="../bundle/js/profileSettings.js"></script>
 </body>

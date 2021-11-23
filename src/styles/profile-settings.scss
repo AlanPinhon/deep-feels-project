@@ -21,6 +21,7 @@
 
 		.back-to-home{
 			padding: .35rem;
+			cursor: pointer;
 		}
 
 		&:hover{
@@ -30,29 +31,59 @@
 
 	}
 
-	.profile-img{
-		margin: 2rem auto;
-		background-color: #6d7dd0;
-		padding: 4rem;
-		border-radius: 50%;
-		position: relative;
-
-		.camera-img{
-			position: absolute;
-			background-color: #fff;
-			padding: .65rem;
-			border-radius: 50%;
-			bottom: 0rem;
-			right: 0rem;
-			cursor: pointer;
-		}
-	}
-
 	.profile-form{
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		align-items: center;
+
+		.profile-img{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 10rem;
+			height: 10rem;
+			margin: 2rem auto;
+			padding: 0;
+			background-color: #6d7dd0;
+			border-radius: 50%;
+			position: relative;
+
+			.preview.change{
+				border-radius: 50%;
+				width: 10rem;
+				height: 10rem;
+				object-fit: cover;
+				transition: 0s;
+			}
+
+			.camera-img{
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				border-radius: 50%;
+				cursor: pointer;
+
+				.upload-img{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: #fff;
+					padding: .75rem;
+					border-radius: 50%;
+					cursor: pointer;
+
+					&:hover{
+						background-color: #ffffe6;
+					}
+				}
+
+				.file{
+					display: none;
+					visibility: none;
+				}
+			}
+		}
 
 		.label-container{
 			width: 80%;
@@ -90,13 +121,30 @@
 			}
 		}
 
+		#save{
+			display: none;
+		}
+
 		.cancel{
-			background: none;
-			color: red;
-			font-weight: 700;
-			font-size: .9rem;
+			width: auto;
+			height: auto;
 			margin-top: 1rem;
+			color: #f00;
+			text-align: center;
+			padding: .9rem;
+			font-size: .9rem;
+			font-weight: 700;
+			border-radius: 8px;
+			border: none;
 			cursor: pointer;
+			display: none;
+
+			&:hover{
+				background: #f00;
+				color: #fff;
+				font-weight: 700;
+				font-size: .9rem;
+			}
 		}
 	}
 
