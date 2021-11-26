@@ -19,15 +19,28 @@ header{
 
 	.profile-settings-container{
 		display: flex;
-		background-color: #6d7dd0;
-		padding: .8rem;
+		width: 2rem;
+		height: 2rem;
 		border-radius: 50%;
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
 
-		img{
+		&.back-color{
+			background-color: #6d7dd0;
+		}
+
+		.preview{
 			width: 1rem;
+			height: 1rem;
+
+			&.change{
+				border-radius: 50%;
+				width: 2rem;
+				height: 2rem;
+				object-fit: cover;
+				transition: 0s;
+			}
 		}
 	}
 }

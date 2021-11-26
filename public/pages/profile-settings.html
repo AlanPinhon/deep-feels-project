@@ -10,7 +10,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Editar Perfil</title>
 </head>
-<body class="light-mode">
+<body class="light-mode align">
 
 	<div class="profile-container">
 
@@ -35,7 +35,7 @@
 
 				<div role="button" class="camera-img">
 					<label class="upload-img" for="file-up"><img src="./deep_feels_assets/settings_profile/bx-camera.svg" alt=""></label>
-					<input id="file-up" class="file" accept="image/*" type="file">
+					<input id="file-up" class="file" accept="image/*" type="file" name="photo">
 				</div>
 
 			</div>
@@ -59,6 +59,11 @@
 
 	</div>
 
+	<div class="msg-fwd-email">
+		<img src="./deep_feels_assets/Check.svg" alt="">
+		<p class="copy">Cambios guardados
+			<span class="line-break">correctamente.</span></p>
+	</div>
 
   <script src="../bundle/js/profileSettings.js"></script>
 </body>
