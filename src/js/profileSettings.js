@@ -13,8 +13,15 @@ const saveBtn = document.querySelector('#save');
 const cancelBtn = document.querySelector('#cancel');
 const uploadImg = document.querySelector('#file-up');
 const img = document.querySelector('.preview');
-const fwdEmail = document.querySelector('.msg-fwd-email');
+const fwdEmail = document.querySelector('.msg-profile-changes');
 const backColor = document.querySelector('.profile-img');
+const arrowBack = document.querySelector('.back-to-home');
+
+const date = new Date();
+
+if(date.getHours() >= 19 || date.getHours() <= 6){
+	arrowBack.classList.toggle('dark-mode-arrow');
+}
 
 // Función que llena los inputs del usuario actual
 const fillInputs = () => {
@@ -105,12 +112,16 @@ const profileListeners = () => {
 	// Actualiza los datos del usuario.
 	profileForm.addEventListener('submit', async (e) => {
 		e.preventDefault();
+
 		saveBtn.textContent = 'Guardando cambios...';
-	
+		saveBtn.classList.remove('button-active');
+		saveBtn.disabled = true;
+		cancelBtn.disabled = true;
+
 		let data = new FormData();
 
 		// Tomamos la data que ha recolectado el payload
-		// al momento de haber cambiado un input y se lo inseramos al
+		// al momento de haber cambiado un input y se lo insertamos al
 		// form data:
 		Object.entries(payload).forEach(([k, v]) => data.append(k, v));
 
@@ -128,6 +139,8 @@ const profileListeners = () => {
 					USER_DATA, JSON.stringify(upgradeResult.user)
 				);
 
+				// Deja vacío el payload, así como la data al enviar
+				// correctamente los datos al servidor.
 				data = null;
 				payload = null;
 
@@ -148,7 +161,6 @@ const profileListeners = () => {
 		saveBtn.style.display = 'none';
 		cancelBtn.style.display = 'none';
 		saveBtn.textContent = 'Guardar cambios';
-		// payLoad = {};
 	});
 
 	backHome.addEventListener('click', () => {
@@ -163,7 +175,7 @@ const profileListeners = () => {
 		saveBtn.classList.add('button-active');
 		saveBtn.disabled = false;
 		cancelBtn.style.display = 'block';
-		
+
 		// sobre-escribimos o creamos propiedades a nuestro payload:
 		payload = { ...payload, [e.target.name] : e.target.files[0] };
 	});
@@ -171,6 +183,5 @@ const profileListeners = () => {
 	// Regresa a los valores iniciales del perfil
 	cancelBtn.addEventListener('click', cancelChanges);
 };
-
 fillInputs();
 profileListeners();

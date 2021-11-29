@@ -28,6 +28,10 @@
 		.back-to-home{
 			padding: .35rem;
 			cursor: pointer;
+
+			&.dark-mode-arrow{
+				filter: invert(1);
+			}
 		}
 
 		&:hover{
@@ -166,8 +170,7 @@
 	}
 }
 
-.msg-fwd-email{
-	max-width: 13rem;
+.msg-profile-changes{
 	position: absolute;
 	bottom: 5rem;
 	display: flex;
@@ -175,6 +178,7 @@
 	border-radius: .5rem;
 	padding: .75rem 1.2rem;
 	opacity: 0;
+	color: #000;
 	transition: .5s ease-in-out;
 
 	&.active{

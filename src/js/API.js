@@ -15,7 +15,7 @@ async (endpoint ,data, method = 'GET', credentials) => {
 		if(data){
 			if(data instanceof FormData){
 				delete fetchOptions.headers["Content-Type"];
-				fetchOptions.body = data;	
+				fetchOptions.body = data;
 			} else {
 				fetchOptions.body = JSON.stringify(data);
 			}

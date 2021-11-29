@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node esbuild-server",
-    "prepare": "husky install"
+    "prepare": "husky install",
+		"lint": "eslint src/**/*.js"
   },
   "engines": {
     "node": ">=15.0.0"

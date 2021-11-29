@@ -1,6 +1,8 @@
 import { useFetch } from "./API";
 import { endpoints } from "../constants/endpoints";
 import { USER_ID } from "../constants/keysStorage";
+import { redirect } from "./redirect";
+
 
 const btnMood = document.querySelector('.button-alert');
 
@@ -21,7 +23,7 @@ const sendMoods = async () => {
 };
 
 const goHome = () => {
-	console.log('Redirigiendo a Inicio');
+	redirect('in-app');
 };
 
 const showMoods = (moods) => {
