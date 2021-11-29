@@ -13,15 +13,12 @@ async (endpoint ,data, method = 'GET', credentials) => {
 		};
 
 		if(data){
-
-			if(Object.values(data).some(value => value?.type)){
-				fetchOptions.headers["Content-Type"] = 'multipart/form-data';
-				console.log(fetchOptions);
+			if(data instanceof FormData){
+				delete fetchOptions.headers["Content-Type"];
+				fetchOptions.body = data;	
+			} else {
+				fetchOptions.body = JSON.stringify(data);
 			}
-
-			fetchOptions.body = JSON.stringify(data);
-			console.log(fetchOptions);
-
 		}
 
 		if(credentials){
