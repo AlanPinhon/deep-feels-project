@@ -3,7 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Inter', sans-serif;
-	transition: .15s ease-out;
+	transition: .1s ease-out;
 }
 
 $title-size: 1.5rem;
@@ -18,6 +18,19 @@ $alert-color: #F5BD05;
 
 .line-break{
 	display: block;
+}
+
+.light-mode{
+	background-color: #f4f4fa;
+
+	&.dark-mode{
+		background-color: #232027;
+		color: #fff;
+
+		a{
+			color: #fff;
+		}
+	}
 }
 
 .container{

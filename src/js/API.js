@@ -13,7 +13,12 @@ async (endpoint ,data, method = 'GET', credentials) => {
 		};
 
 		if(data){
-			fetchOptions.body = JSON.stringify(data);
+			if(data instanceof FormData){
+				delete fetchOptions.headers["Content-Type"];
+				fetchOptions.body = data;
+			} else {
+				fetchOptions.body = JSON.stringify(data);
+			}
 		}
 
 		if(credentials){

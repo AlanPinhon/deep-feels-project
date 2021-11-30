@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bundle/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Editar Perfil</title>
+</head>
+<body class="light-mode align">
+
+	<div class="profile-container">
+
+		<div class="profile-text-container">
+			<h2 class="title">Tu perfil</h2>
+			<div class="copy-container">
+				<p class="copy">Conoce o edita la información registrada
+					<span class="line-break">en tu cuenta.</span>
+				</p>
+			</div>
+		</div>
+
+		<div id="back-home" class="arrow-container">
+			<img class="back-to-home" src="./deep_feels_assets/settings_profile/bx-arrow-back.svg">
+		</div>
+
+		<form class="profile-form" autocomplete="off">
+
+			<div class="profile-img">
+
+				<img class="preview" src="./deep_feels_assets/settings_profile/bxs-user.svg" alt="">
+
+				<div role="button" class="camera-img">
+					<label class="upload-img" for="file-up"><img src="./deep_feels_assets/settings_profile/bx-camera.svg" alt=""></label>
+					<input id="file-up" class="file" accept="image/*" type="file" name="photo">
+				</div>
+
+			</div>
+
+			<div class="label-container">
+				<label for="">Nombre</label>
+				<input type="text" id="name" name="name">
+				<p class="message" >Introduce un nombre válido</p>
+			</div>
+			<div class="label-container">
+				<label for="">Email</label>
+				<input type="email" id="email" name="email">
+				<p class="message" >Introduce un email válido</p>
+			</div>
+
+			<button id="save" type="submit" disabled>Guardar cambios</button>
+
+			<button type="button" id="cancel" class="cancel">Cancelar</button>
+
+		</form>
+
+	</div>
+
+	<div class="msg-profile-changes">
+		<img src="./deep_feels_assets/Check.svg" alt="">
+		<p class="copy">Cambios guardados
+			<span class="line-break">correctamente.</span></p>
+	</div>
+
+	<script src="../bundle/js/darkModeApp.js"></script>
+  <script src="../bundle/js/profileSettings.js"></script>
+</body>
+</html>
