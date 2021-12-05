@@ -1,4 +1,6 @@
 import { USER_TOKEN } from "../constants/keysStorage";
+import { redirect } from "./redirect";
+
 
 export const useFetch =
 async (endpoint ,data, method = 'GET', credentials) => {
@@ -28,6 +30,11 @@ async (endpoint ,data, method = 'GET', credentials) => {
 
 		const response = await fetch(url, fetchOptions);
 		const result = await response.json();
+
+		if(response.status === 401){
+			redirect('login');
+		}
+
 		return result;
 	} catch (error) {
 		console.log(error);

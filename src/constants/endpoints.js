@@ -4,5 +4,6 @@ export const endpoints = {
 	moods: 'moods/',
 	userMood: 'user/:id/mood',// El ":id" se reemplaza por el id de usuario
 	passRecovery: 'password-recovery',
+	resetPassword: 'reset-password',
 	editProfile: 'user/:id/edit'// El ":id" se reemplaza por el id de usuario
 };

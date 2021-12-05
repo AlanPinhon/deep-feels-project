@@ -1,5 +1,7 @@
 import { redirect } from "./redirect";
 import { campos } from "../constants/validators";
+import { endpoints } from "../constants/endpoints";
+import { useFetch } from "./API";
 
 const emailRecovery = document.querySelector('#email');
 const inputMsg = document.querySelector('.message');
@@ -23,13 +25,24 @@ const validarInput = (e) => {
 
 const passRecovListeners = () => {
 	emailRecovery.addEventListener('input', validarInput);
-	recoveryForm.addEventListener('submit', (e) => {
+	recoveryForm.addEventListener('submit', async (e) => {
 		e.preventDefault();
 
-		console.log('Enviando correo...');
+		const data = { email: emailRecovery.value };
+
 		// Prevent any click while request is "in-process"
 		btnContinue.innerHTML = 'Enviando...';
 		btnContinue.disabled = true;
+
+		await useFetch(
+			endpoints.passRecovery,
+			data,
+			'POST',
+		);
+
+		//Guarda el objeto del correo para que, posteriormente,
+		//se reenvie el correo en caso de no enviarlo por primera vez.
+		sessionStorage.setItem('email', JSON.stringify(data));
 
 		redirect('email-sent');
 	});

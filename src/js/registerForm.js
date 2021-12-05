@@ -1,5 +1,5 @@
 import { endpoints } from "../constants/endpoints";
-import { USER_ID, USER_TOKEN } from "../constants/keysStorage";
+import { USER_ID, USER_TOKEN, USER_DATA } from "../constants/keysStorage";
 import { campos } from "../constants/validators";
 import { useFetch } from "./API";
 import { redirect } from "./redirect";
@@ -69,6 +69,7 @@ const registerListeners = () => {
 		if(result.ok) {
 			localStorage.setItem(USER_ID, result.user._id);
 			localStorage.setItem(USER_TOKEN, result.token);
+			localStorage.setItem(USER_DATA, JSON.stringify(result.user));
 			btnRegister.innerText = 'Registrado';
 		} else {
 			btnRegister.classList.remove('button-active');
