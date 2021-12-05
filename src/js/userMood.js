@@ -2,15 +2,18 @@ import { useFetch } from "./API";
 import { endpoints } from "../constants/endpoints";
 import { USER_ID } from "../constants/keysStorage";
 import { redirect } from "./redirect";
+import { userAuthenticated } from "../utils/userAuthenticated";
 
+userAuthenticated();
 
+const userID = localStorage.getItem(USER_ID);
 const btnMood = document.querySelector('.button-alert');
 
 let arrayId = [];
 
 const sendMoods = async () => {
-	const userID = localStorage.getItem(USER_ID);
-	const selectedMoods =
+
+	const response =
 	await useFetch(
 		endpoints.userMood.replace(':id', userID),
 		arrayId,
@@ -18,8 +21,9 @@ const sendMoods = async () => {
 		true
 	);
 
-	console.log(selectedMoods);
-	console.log(arrayId);
+	if(response.ok){
+		redirect('in-app');
+	}
 };
 
 const goHome = () => {
