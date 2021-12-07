@@ -1,8 +1,9 @@
 import { currentUser } from "../utils/getCurrentUser";
-import { userAuthenticated } from "../utils/userAuthenticated";
+import { userNoAuthenticated } from "../utils/userNoAuthenticated";
+
 import { redirect } from "./redirect";
 
-userAuthenticated();
+userNoAuthenticated();
 
 const userName = document.querySelector('#user-name');
 const accountSettings = document.querySelector('#account-settings');

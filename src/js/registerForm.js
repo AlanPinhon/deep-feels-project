@@ -1,6 +1,7 @@
 import { endpoints } from "../constants/endpoints";
 import { USER_ID, USER_TOKEN, USER_DATA } from "../constants/keysStorage";
 import { campos } from "../constants/validators";
+import { userAuthenticated } from "../utils/userAuthenticated";
 import { useFetch } from "./API";
 import { redirect } from "./redirect";
 
@@ -11,6 +12,8 @@ const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#pass');
 const formulario = document.querySelector('form');
 const msgError = document.querySelector('.message-error');
+
+userAuthenticated();
 
 const camposValidacion = {
 	name: false,

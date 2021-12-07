@@ -2,9 +2,9 @@ import { useFetch } from "./API";
 import { endpoints } from "../constants/endpoints";
 import { USER_ID } from "../constants/keysStorage";
 import { redirect } from "./redirect";
-import { userAuthenticated } from "../utils/userAuthenticated";
+import { userNoAuthenticated } from "../utils/userNoAuthenticated";
 
-userAuthenticated();
+userNoAuthenticated();
 
 const userID = localStorage.getItem(USER_ID);
 const btnMood = document.querySelector('.button-alert');

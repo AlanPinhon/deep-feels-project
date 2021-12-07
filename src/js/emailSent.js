@@ -1,9 +1,13 @@
 import { useFetch } from "./API";
 import { endpoints } from "../constants/endpoints";
-
+import { redirect } from "./redirect";
 
 const resendEmail = document.querySelector('.resend');
 const fwdEmail = document.querySelector('.msg-fwd-email');
+
+if(!sessionStorage.getItem('email')){
+	redirect('login');
+}
 
 resendEmail.addEventListener('click', async (e) => {
 	e.preventDefault();
@@ -16,7 +20,7 @@ resendEmail.addEventListener('click', async (e) => {
 		endpoints.passRecovery,
 		//Toma el objeto del correo y lo reenvía al servidor.
 		JSON.parse(sessionStorage.getItem('email')),
-		'POST',
+		'POST'
 	);
 
 	resendEmail.textContent = textoActual;
