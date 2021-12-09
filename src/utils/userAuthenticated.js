@@ -1,5 +1,5 @@
 import { USER_TOKEN , USER_DATA, USER_ID } from "../constants/keysStorage";
-import { redirect } from "../js/redirect";
+import { redirect } from "./redirect";
 
 export const userAuthenticated = () => {
 	if(localStorage.getItem(USER_TOKEN) &&

@@ -1,5 +1,5 @@
 import { USER_TOKEN } from "../constants/keysStorage";
-import { redirect } from "./redirect";
+import { redirect } from "../utils/redirect";
 
 
 export const useFetch =

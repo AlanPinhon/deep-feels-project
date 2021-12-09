@@ -1,6 +1,6 @@
 import { useFetch } from "./API";
 import { endpoints } from "../constants/endpoints";
-import { redirect } from "./redirect";
+import { redirect } from "../utils/redirect";
 
 const resendEmail = document.querySelector('.resend');
 const fwdEmail = document.querySelector('.msg-fwd-email');

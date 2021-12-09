@@ -1,4 +1,4 @@
-import { redirect } from "./redirect";
+import { redirect } from "../utils/redirect";
 
 const btnToLogin = document.querySelector('button');
 
