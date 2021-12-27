@@ -4,6 +4,9 @@ import { redirect } from "./redirect";
 import { useFetch } from "./API";
 import { USER_DATA, USER_ID } from "../constants/keysStorage";
 import { endpoints } from "../constants/endpoints";
+import { userNoAuthenticated } from "../utils/userNoAuthenticated";
+
+userNoAuthenticated();
 
 const backHome = document.querySelector('#back-home');
 const profileForm = document.querySelector('form');

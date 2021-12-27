@@ -2,12 +2,15 @@ import { endpoints } from "../constants/endpoints";
 import { useFetch } from "./API";
 import { USER_ID, USER_TOKEN, USER_DATA } from "../constants/keysStorage";
 import { redirect } from "./redirect";
+import { userAuthenticated } from "../utils/userAuthenticated";
 
 const formLogin = document.querySelector('form');
 const emailLogin = document.querySelector('#email');
 const passwordLogin = document.querySelector('#pass');
 const btnLogin = document.querySelector('button');
 const alertError = document.querySelector('.message-error');
+
+userAuthenticated();
 
 const login = () => {
 	if(!emailLogin.value) {

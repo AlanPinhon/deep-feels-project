@@ -10,8 +10,8 @@ header{
 
 	.profile-settings-container{
 		display: flex;
-		width: 2rem;
-		height: 2rem;
+		width: 3rem;
+		height: 3rem;
 		border-radius: 50%;
 		align-items: center;
 		justify-content: center;
@@ -27,8 +27,8 @@ header{
 
 			&.change{
 				border-radius: 50%;
-				width: 2rem;
-				height: 2rem;
+				width: 3rem;
+				height: 3rem;
 				object-fit: cover;
 				transition: 0s;
 			}
