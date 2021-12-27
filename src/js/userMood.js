@@ -1,8 +1,8 @@
 import { useFetch } from "./API";
 import { endpoints } from "../constants/endpoints";
 import { USER_ID } from "../constants/keysStorage";
-import { redirect } from "./redirect";
 import { userNoAuthenticated } from "../utils/userNoAuthenticated";
+import { redirect } from "../utils/redirect";
 
 userNoAuthenticated();
 

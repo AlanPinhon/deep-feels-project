@@ -1,7 +1,6 @@
 import { currentUser } from "../utils/getCurrentUser";
+import { redirect } from "../utils/redirect";
 import { userNoAuthenticated } from "../utils/userNoAuthenticated";
-
-import { redirect } from "./redirect";
 
 userNoAuthenticated();
 
