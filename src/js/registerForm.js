@@ -1,9 +1,9 @@
 import { endpoints } from "../constants/endpoints";
 import { USER_ID, USER_TOKEN, USER_DATA } from "../constants/keysStorage";
 import { campos } from "../constants/validators";
+import { redirect } from "../utils/redirect";
 import { userAuthenticated } from "../utils/userAuthenticated";
 import { useFetch } from "./API";
-import { redirect } from "./redirect";
 
 
 const btnRegister = document.querySelector('button');

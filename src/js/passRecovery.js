@@ -1,8 +1,8 @@
 import { campos } from "../constants/validators";
-import { redirect } from "./redirect";
 import { USER_TOKEN } from "../constants/keysStorage";
 import { useFetch } from "./API";
 import { endpoints } from "../constants/endpoints";
+import { redirect } from "../utils/redirect";
 
 
 const newPass = document.querySelector('#new-pass');

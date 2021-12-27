@@ -1,7 +1,7 @@
-import { redirect } from "./redirect";
 import { campos } from "../constants/validators";
 import { endpoints } from "../constants/endpoints";
 import { useFetch } from "./API";
+import { redirect } from "../utils/redirect";
 
 const emailRecovery = document.querySelector('#email');
 const inputMsg = document.querySelector('.message');

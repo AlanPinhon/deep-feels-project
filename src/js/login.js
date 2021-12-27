@@ -1,8 +1,8 @@
 import { endpoints } from "../constants/endpoints";
 import { useFetch } from "./API";
 import { USER_ID, USER_TOKEN, USER_DATA } from "../constants/keysStorage";
-import { redirect } from "./redirect";
 import { userAuthenticated } from "../utils/userAuthenticated";
+import { redirect } from "../utils/redirect";
 
 const formLogin = document.querySelector('form');
 const emailLogin = document.querySelector('#email');

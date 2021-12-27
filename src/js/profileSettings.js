@@ -1,10 +1,10 @@
 import { currentUser } from "../utils/getCurrentUser";
 import { campos } from "../constants/validators";
-import { redirect } from "./redirect";
 import { useFetch } from "./API";
 import { USER_DATA, USER_ID } from "../constants/keysStorage";
 import { endpoints } from "../constants/endpoints";
 import { userNoAuthenticated } from "../utils/userNoAuthenticated";
+import { redirect } from "../utils/redirect";
 
 userNoAuthenticated();
 
