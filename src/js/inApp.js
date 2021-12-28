@@ -1,6 +1,7 @@
 import { endpoints } from "../constants/endpoints";
 import { currentUser } from "../utils/getCurrentUser";
 import { redirect } from "../utils/redirect";
+import { showSounds } from "../utils/showSounds";
 import { userNoAuthenticated } from "../utils/userNoAuthenticated";
 import { useFetch } from "./API";
 
@@ -51,32 +52,6 @@ accountSettings.addEventListener('click', () => {
 
 //Muestra los audios en pantalla
 // let arrayAudios = [];
-
-const showSounds = (audios) => {
-	const audioCont = document.querySelector('.audios-container');
-
-	audios.forEach( audio =>{
-		const { image, avgColor, duration, name } = audio;
-
-		const containerAudio = document.createElement('div');
-		const imgAudio = document.createElement('div');
-		const nameAudio = document.createElement('p');
-		const durationAudio = document.createElement('p');
-
-		containerAudio.style.backgroundColor = avgColor;
-		containerAudio.classList.add('audio-container');
-		imgAudio.style.backgroundImage = `url(${image})`;
-		nameAudio.innerText = name;
-		durationAudio.innerText = duration;
-
-		containerAudio.appendChild(imgAudio);
-		containerAudio.appendChild(nameAudio);
-		containerAudio.appendChild(durationAudio);
-		audioCont.appendChild(containerAudio);
-
-
-	});
-};
 
 const sounds = async () => {
 	const audiosResult = await useFetch(endpoints.sounds,
