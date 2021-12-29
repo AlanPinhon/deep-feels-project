@@ -1,3 +1,5 @@
+import { timeConversion } from "../js/timeConversion";
+
 export const showSounds = (audios) => {
 	const audioCont = document.querySelector('.audios-container');
 
@@ -11,6 +13,8 @@ export const showSounds = (audios) => {
 		const playBtn = document.createElement('img');
 		const nameAudio = document.createElement('p');
 		const durationAudio = document.createElement('p');
+
+		const time = timeConversion(duration);
 
 		containerAudio.style.backgroundColor = avgColor;
 		containerAudio.classList.add('audio-container');
@@ -27,7 +31,7 @@ export const showSounds = (audios) => {
 			'../../../pages/deep_feels_assets/play-btn.svg');
 
 		nameAudio.innerText = name;
-		durationAudio.innerText = duration;
+		durationAudio.innerText = `${time} minutos`;
 
 		// Append de los elementos que conforman cada audio
 		containerPlay.appendChild(playBtn);
