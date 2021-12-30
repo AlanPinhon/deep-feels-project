@@ -1,4 +1,5 @@
 import { endpoints } from "../constants/endpoints";
+import { AUDIO_DATA } from "../constants/keysStorage";
 import { currentUser } from "../utils/getCurrentUser";
 import { redirect } from "../utils/redirect";
 import { showSounds } from "../utils/showSounds";
@@ -60,6 +61,7 @@ const sounds = async () => {
 		true);
 	if(audiosResult.ok){
 		showSounds(audiosResult.sounds);
+		sessionStorage.setItem(AUDIO_DATA, JSON.stringify(audiosResult.sounds));
 		console.log(audiosResult.sounds);
 	}
 };
