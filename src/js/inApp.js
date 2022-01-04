@@ -62,7 +62,6 @@ const sounds = async () => {
 	if(audiosResult.ok){
 		showSounds(audiosResult.sounds);
 		sessionStorage.setItem(AUDIO_DATA, JSON.stringify(audiosResult.sounds));
-		console.log(audiosResult.sounds);
 	}
 };
 

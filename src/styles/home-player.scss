@@ -1,0 +1,33 @@
+.image-container{
+	background-color: aqua;
+
+	.player-container{
+		max-width: 480px;
+		margin: 0 auto;
+		padding: 4rem 3rem;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+
+		.arrow-player-container{
+			position: absolute;
+			line-height: .1rem;
+			top: 2.2rem;
+
+			.back-to-home{
+				padding: .35rem;
+				cursor: pointer;
+
+				&.dark-mode-arrow{
+					filter: invert(1);
+				}
+			}
+
+			&:hover{
+				background-color: rgb(255, 255, 255, .75);
+				border-radius: 5rem;
+			}
+
+		}
+	}
+}

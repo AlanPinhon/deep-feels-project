@@ -1,4 +1,5 @@
 import { timeConversion } from "../js/timeConversion";
+import { redirect } from "./redirect";
 
 export const showSounds = (audios) => {
 	const audioCont = document.querySelector('.audios-container');
@@ -43,6 +44,9 @@ export const showSounds = (audios) => {
 		containerAudio.appendChild(containerPlay);
 		audioCont.appendChild(containerAudio);
 
+		playBtn.addEventListener('click', () => {
+			redirect('home-player');
+		});
 
 	});
 };
