@@ -39,3 +39,55 @@ header{
 .copy-container{
 	margin: .5rem 0;
 }
+
+.audios-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem 0;
+
+	.audio-container{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 85%;
+		margin: 1rem 0;
+		padding: 1.5rem;
+		border-radius: .5rem;
+		color: #fff;
+
+		.img-container{
+			width: 4rem;
+			height: 4rem;
+			background-size: cover;
+			border-radius: 50%;
+		}
+
+		.info-container{
+			display: flex;
+			flex-direction: column;
+
+			.name-audio{
+				font-weight: 700;
+				font-size: .85rem;
+				margin: .5rem 0;
+			}
+
+			.time-audio{
+				font-weight: 400;
+				font-size: .85rem;
+				margin: .5rem 0;
+			}
+		}
+
+		.play-btn{
+			width: 2rem;
+			height: 2rem;
+			cursor: pointer;
+
+			&:hover{
+				transform: scale(1.15, 1.15);
+			}
+		}
+	}
+}
