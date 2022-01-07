@@ -1,3 +1,4 @@
+import { AUDIO_DATA } from "../constants/keysStorage";
 import { timeConversion } from "../js/timeConversion";
 import { redirect } from "./redirect";
 
@@ -5,7 +6,7 @@ export const showSounds = (audios) => {
 	const audioCont = document.querySelector('.audios-container');
 
 	audios.forEach( audio =>{
-		const { image, avgColor, duration, name } = audio;
+		const { image, avgColor, duration, name, _id } = audio;
 
 		const containerAudio = document.createElement('div');
 		const containerImg = document.createElement('div');
@@ -19,6 +20,7 @@ export const showSounds = (audios) => {
 
 		containerAudio.style.backgroundColor = avgColor;
 		containerAudio.classList.add('audio-container');
+		// containerAudio.id = _id;
 
 		containerImg.style.backgroundImage = `url(${image})`;
 		containerImg.classList.add('img-container');
@@ -30,6 +32,8 @@ export const showSounds = (audios) => {
 		containerPlay.classList.add('play-btn');
 		playBtn.setAttribute('src',
 			'../../../pages/deep_feels_assets/play-btn.svg');
+
+		playBtn.id = _id;
 
 		nameAudio.innerText = name;
 		durationAudio.innerText = `${time} minutos`;
@@ -44,7 +48,14 @@ export const showSounds = (audios) => {
 		containerAudio.appendChild(containerPlay);
 		audioCont.appendChild(containerAudio);
 
-		playBtn.addEventListener('click', () => {
+		//Se envía el id a la url para la reproducción del audio.
+		playBtn.addEventListener('click', async () => {
+			const dataAudio = {
+				img: image,
+				id: _id
+			};
+
+			sessionStorage.setItem(AUDIO_DATA, JSON.stringify(dataAudio));
 			redirect('home-player');
 		});
 

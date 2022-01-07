@@ -1,3 +1,4 @@
+import { AUDIO_DATA } from "../constants/keysStorage";
 import { redirect } from "../utils/redirect";
 
 const backHome = document.querySelector('.arrow-player-container');
@@ -8,6 +9,6 @@ backHome.addEventListener('click', () => {
 });
 
 const showData = () => {
-	console.log(JSON.parse(sessionStorage.getItem('audio_data')));
+	console.log(JSON.parse(sessionStorage.getItem(AUDIO_DATA)));
 };
 showData();

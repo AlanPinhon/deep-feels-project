@@ -6,5 +6,6 @@ export const endpoints = {
 	passRecovery: 'password-recovery',
 	resetPassword: 'reset-password',
 	editProfile: 'user/:id/edit',// El ":id" se reemplaza por el id de usuario
-	sounds: 'sounds'
+	sounds: 'sounds',
+	stream: 'sounds/stream/:id-audio' //El ":id" se reemplaza por el del audio
 };
