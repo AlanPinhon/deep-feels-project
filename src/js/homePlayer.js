@@ -1,5 +1,6 @@
-import { AUDIO_DATA } from "../constants/keysStorage";
+import { currentAudio } from "../utils/getCurrentAudio";
 import { redirect } from "../utils/redirect";
+
 
 const backHome = document.querySelector('.arrow-player-container');
 
@@ -9,6 +10,8 @@ backHome.addEventListener('click', () => {
 });
 
 const showData = () => {
-	console.log(JSON.parse(sessionStorage.getItem(AUDIO_DATA)));
+	const backImage = document.querySelector('.image-container');
+	const imgAudio = currentAudio().img;
+	backImage.style.backgroundImage = `url('${imgAudio}')`;
 };
 showData();

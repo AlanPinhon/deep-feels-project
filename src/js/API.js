@@ -32,6 +32,7 @@ async (endpoint ,data, method = 'GET', credentials) => {
 		const result = await response.json();
 
 		if(response.status === 401){
+			localStorage.clear();
 			redirect('login');
 		}
 

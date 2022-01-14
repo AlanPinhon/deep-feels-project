@@ -1,5 +1,5 @@
 .image-container{
-	background-color: aqua;
+	background-size: cover;
 
 	.player-container{
 		max-width: 480px;
@@ -14,19 +14,17 @@
 			position: absolute;
 			line-height: .1rem;
 			top: 2.2rem;
+			filter: invert(1);
 
 			.back-to-home{
 				padding: .35rem;
 				cursor: pointer;
-
-				&.dark-mode-arrow{
-					filter: invert(1);
-				}
 			}
 
 			&:hover{
 				background-color: rgb(255, 255, 255, .75);
 				border-radius: 5rem;
+				filter: invert(0);
 			}
 
 		}
