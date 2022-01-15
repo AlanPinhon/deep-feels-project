@@ -7,5 +7,6 @@ export const endpoints = {
 	resetPassword: 'reset-password',
 	editProfile: 'user/:id/edit',// El ":id" se reemplaza por el id de usuario
 	sounds: 'sounds',
-	stream: 'sounds/stream/:id-audio' //El ":id" se reemplaza por el del audio
+	stream: 'sounds/stream/:id-audio', //El ":id" se reemplaza por el del audio
+	phrases: 'quote'
 };
