@@ -1,11 +1,13 @@
+import { API_HOST } from "../constants/endpoints";
 import { USER_TOKEN } from "../constants/keysStorage";
 import { redirect } from "../utils/redirect";
+
 
 
 export const useFetch =
 async (endpoint ,data, method = 'GET', credentials) => {
 	try {
-		const url = `https://deep-feels-backend.herokuapp.com/${endpoint}`;
+		const url = `${API_HOST}${endpoint}`;
 
 		const fetchOptions = {
 			method,

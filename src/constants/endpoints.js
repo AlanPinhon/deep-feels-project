@@ -10,3 +10,5 @@ export const endpoints = {
 	stream: 'sounds/stream/:id-audio', //El ":id" se reemplaza por el del audio
 	phrases: 'quote'
 };
+
+export const API_HOST = 'https://deep-feels-backend.herokuapp.com/';

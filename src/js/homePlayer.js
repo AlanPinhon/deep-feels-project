@@ -1,7 +1,8 @@
-import { endpoints } from "../constants/endpoints";
+import { endpoints, API_HOST } from "../constants/endpoints";
 import { currentAudio } from "../utils/getCurrentAudio";
 import { redirect } from "../utils/redirect";
 import { useFetch } from "./API";
+import { timeConversion } from "./timeConversion";
 
 // Regresa a la página principal y elimina los
 // datos en session storage
@@ -11,6 +12,7 @@ backHome.addEventListener('click', () => {
 	sessionStorage.clear();
 });
 
+// Muestra las frases de inspiración en el reproductor
 const showPhrases = async () => {
 	const phrasesResult = await useFetch(endpoints.phrases,
 		null,
@@ -22,18 +24,29 @@ const showPhrases = async () => {
 	const { text, author } = phrasesResult.quote;
 
 	phraseEl.textContent = text;
+	authorEl.textContent = `- ${author || 'Anonymous'}`;
+};
 
-	if(author === null) {
-		authorEl.textContent = '- Anonymous';
-	} else {
-		authorEl.textContent = `- ${author}`;
-	}
+const loadAudio = () => {
+	const audio = document.createElement('audio');
+	const audioID = currentAudio().id;
+	audio.src =
+	`${API_HOST}${endpoints.stream.replace(':id-audio', audioID)}`;
+
+	// audio.play();
 };
 
 const showData = () => {
 	const backImage = document.querySelector('.image-container');
 	const imgAudio = currentAudio().img;
 	backImage.style.backgroundImage = `url('${imgAudio}')`;
+
+	const finishTime = document.querySelector('.finish-time');
+	const endTimeAudio = currentAudio().duration;
+	const conversionTime = timeConversion(endTimeAudio);
+
+	finishTime.textContent = `${conversionTime}:00`;
 	showPhrases();
+	loadAudio();
 };
 showData();
