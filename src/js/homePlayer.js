@@ -3,7 +3,7 @@ import { currentAudio } from "../utils/getCurrentAudio";
 import { redirect } from "../utils/redirect";
 import { useFetch } from "./API";
 
-// const progressBar = document.querySelector('.progress-bar');
+
 const audio = document.createElement('audio');
 const progress = document.querySelector('#progress');
 
@@ -26,6 +26,17 @@ const updateProg = (e) => {
 	const { duration, currentTime } = e.srcElement;
 	const progStatus = (currentTime / duration) * 100;
 	progress.style.width = `${progStatus}%`;
+};
+
+const setProgress = (e) => {
+	const totalWidth = e.srcElement.offsetWidth;
+	const progWidth = e.offsetX;
+
+	const current = ( progWidth / totalWidth) * audio.duration;
+	audio.currentTime = current;
+
+	console.log(audio.currentTime);
+	console.log(current);
 };
 
 //Carga el audio seleccionado
@@ -62,8 +73,6 @@ const showData = () => {
 
 const playerListeners = () => {
 
-	audio.addEventListener('timeupdate', updateProg);
-
 	// Regresa a la página principal y elimina los
 	// datos en session storage
 	const backHome = document.querySelector('.arrow-player-container');
@@ -71,6 +80,11 @@ const playerListeners = () => {
 		redirect('in-app');
 		sessionStorage.clear();
 	});
+
+	const progressBar = document.querySelector('.progress-bar');
+	progressBar.addEventListener('click', setProgress);
+
+	audio.addEventListener('timeupdate', updateProg);
 
 	showData();
 };

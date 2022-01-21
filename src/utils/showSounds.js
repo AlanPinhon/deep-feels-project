@@ -52,8 +52,7 @@ export const showSounds = (audios) => {
 		playBtn.addEventListener('click', async () => {
 			const dataAudio = {
 				img: image,
-				id: _id,
-				duration
+				id: _id
 			};
 
 			sessionStorage.setItem(AUDIO_DATA, JSON.stringify(dataAudio));
