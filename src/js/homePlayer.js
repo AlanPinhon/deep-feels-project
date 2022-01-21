@@ -2,15 +2,10 @@ import { endpoints, API_HOST } from "../constants/endpoints";
 import { currentAudio } from "../utils/getCurrentAudio";
 import { redirect } from "../utils/redirect";
 import { useFetch } from "./API";
-import { timeConversion } from "./timeConversion";
 
-// Regresa a la página principal y elimina los
-// datos en session storage
-const backHome = document.querySelector('.arrow-player-container');
-backHome.addEventListener('click', () => {
-	redirect('in-app');
-	sessionStorage.clear();
-});
+// const progressBar = document.querySelector('.progress-bar');
+const audio = document.createElement('audio');
+const progress = document.querySelector('#progress');
 
 // Muestra las frases de inspiración en el reproductor
 const showPhrases = async () => {
@@ -27,13 +22,33 @@ const showPhrases = async () => {
 	authorEl.textContent = `- ${author || 'Anonymous'}`;
 };
 
+const updateProg = (e) => {
+	const { duration, currentTime } = e.srcElement;
+	const progStatus = (currentTime / duration) * 100;
+	progress.style.width = `${progStatus}%`;
+};
+
+//Carga el audio seleccionado
 const loadAudio = () => {
-	const audio = document.createElement('audio');
 	const audioID = currentAudio().id;
 	audio.src =
 	`${API_HOST}${endpoints.stream.replace(':id-audio', audioID)}`;
 
-	// audio.play();
+	//Pausa o reproduce el audio
+	const playPauseBtn = document.querySelector('.play-container img');
+	playPauseBtn.addEventListener('click', () => {
+		if((!audio.paused) && (!audio.ended)){
+			audio.pause();
+			playPauseBtn.src =
+			'../../pages/deep_feels_assets/play-btn.svg';
+		} else {
+			audio.play();
+			playPauseBtn.src =
+			'../../pages/deep_feels_assets/pause-btn.svg';
+		}
+	});
+
+	audio.play();
 };
 
 const showData = () => {
@@ -41,12 +56,23 @@ const showData = () => {
 	const imgAudio = currentAudio().img;
 	backImage.style.backgroundImage = `url('${imgAudio}')`;
 
-	const finishTime = document.querySelector('.finish-time');
-	const endTimeAudio = currentAudio().duration;
-	const conversionTime = timeConversion(endTimeAudio);
-
-	finishTime.textContent = `${conversionTime}:00`;
 	showPhrases();
 	loadAudio();
 };
-showData();
+
+const playerListeners = () => {
+
+	audio.addEventListener('timeupdate', updateProg);
+
+	// Regresa a la página principal y elimina los
+	// datos en session storage
+	const backHome = document.querySelector('.arrow-player-container');
+	backHome.addEventListener('click', () => {
+		redirect('in-app');
+		sessionStorage.clear();
+	});
+
+	showData();
+};
+
+playerListeners();
