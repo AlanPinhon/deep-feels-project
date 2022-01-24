@@ -15,7 +15,7 @@ const msgError = document.querySelector('.message-error');
 
 userAuthenticated();
 
-const camposValidacion = {
+const camposValidation = {
 	name: false,
 	email: false,
 	password: false
@@ -31,16 +31,16 @@ const validarCampo = (expresion, input, message) => {
 		input.classList.remove('active');
 		input.classList.add('error');
 		message.style.display = 'block';
-		camposValidacion[input.name] = false;
+		camposValidation[input.name] = false;
 	} else {
 		input.classList.remove('error');
 		input.classList.add('active');
 		message.style.display = 'none';
-		camposValidacion[input.name] = true;
+		camposValidation[input.name] = true;
 	}
 
 	const camposValidados =
-		Object.values(camposValidacion).every(value => value);
+		Object.values(camposValidation).every(value => value);
 
 	if(camposValidados){
 		btnRegister.classList.add('button-active');
@@ -74,6 +74,7 @@ const registerListeners = () => {
 			localStorage.setItem(USER_TOKEN, result.token);
 			localStorage.setItem(USER_DATA, JSON.stringify(result.user));
 			btnRegister.innerText = 'Registrado';
+			redirect('user-mood');
 		} else {
 			btnRegister.classList.remove('button-active');
 			btnRegister.disabled = true;

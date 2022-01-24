@@ -45,6 +45,7 @@ const loginListeners = () => {
 		// Text changes in-loading phase should change before
 		// that request will be fired:
 		btnLogin.innerText = 'Iniciando sesión...';
+		btnLogin.classList.remove('button-active');
 		btnLogin.disabled = true;
 
 		const loginResult = await useFetch(endpoints.login, inputs , 'POST');
