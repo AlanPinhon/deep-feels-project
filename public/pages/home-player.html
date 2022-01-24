@@ -5,20 +5,42 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../bundle/app.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 	<title>Reproductor</title>
 </head>
 <body>
 	<div class="image-container">
-
+		<div class="gradient"></div>
 		<div class="player-container">
 
-			<div id="back-home" class="arrow-player-container">
-				<img class="back-to-home" src="./deep_feels_assets/settings_profile/bx-arrow-back.svg">
-			</div>
-
 			<div class="player-section">
-				<div class="phrases-container"></div>
-				<div class="play-container"></div>
+
+				<div id="back-home" class="arrow-player-container">
+					<img class="back-to-home" src="./deep_feels_assets/settings_profile/bx-arrow-back.svg">
+				</div>
+
+				<div class="phrases-container">
+					<p class="copy-quote">Frase de inspiración:</p>
+					<p class="phrase"></p>
+					<p class="author"></p>
+				</div>
+
+				<div class="play-container">
+
+					<img src="./deep_feels_assets/pause-btn.svg" alt="">
+
+					<div class="time-progress">
+						<p class="audio-time" >0:00</p>
+						<p class="finish-time" >0:00</p>
+					</div>
+
+					<div class="progress-bar">
+						<div id="progress" class="progress"></div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 

@@ -20,7 +20,6 @@ export const showSounds = (audios) => {
 
 		containerAudio.style.backgroundColor = avgColor;
 		containerAudio.classList.add('audio-container');
-		// containerAudio.id = _id;
 
 		containerImg.style.backgroundImage = `url(${image})`;
 		containerImg.classList.add('img-container');
