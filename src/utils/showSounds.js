@@ -5,6 +5,10 @@ import { redirect } from "./redirect";
 export const showSounds = (audios) => {
 	const audioCont = document.querySelector('.audios-container');
 
+	while (audioCont.firstChild) {
+		audioCont.removeChild(audioCont.firstChild);
+	}
+
 	audios.forEach( audio =>{
 		const { image, avgColor, duration, name, _id } = audio;
 
