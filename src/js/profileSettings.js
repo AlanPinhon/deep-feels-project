@@ -19,6 +19,7 @@ const img = document.querySelector('.preview');
 const fwdEmail = document.querySelector('.msg-profile-changes');
 const backColor = document.querySelector('.profile-img');
 const arrowBack = document.querySelector('.back-to-home');
+const logoutBtn = document.querySelector('.log-out');
 
 const date = new Date();
 
@@ -185,6 +186,12 @@ const profileListeners = () => {
 
 	// Regresa a los valores iniciales del perfil
 	cancelBtn.addEventListener('click', cancelChanges);
+
+	//Cierra la sesión del usuario
+	logoutBtn.addEventListener('click', () => {
+		localStorage.clear();
+		redirect('login');
+	});
 };
 fillInputs();
 profileListeners();

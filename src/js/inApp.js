@@ -4,6 +4,7 @@ import { redirect } from "../utils/redirect";
 import { showSounds } from "../utils/showSounds";
 import { userNoAuthenticated } from "../utils/userNoAuthenticated";
 import { useFetch } from "./API";
+import { showSpinner } from "../utils/showSpinner";
 
 userNoAuthenticated();
 
@@ -50,14 +51,14 @@ accountSettings.addEventListener('click', () => {
 	redirect('profile-settings');
 });
 
-//Muestra los audios en pantalla
-// let arrayAudios = [];
-
 const sounds = async () => {
+	showSpinner();
+
 	const audiosResult = await useFetch(endpoints.sounds,
 		null,
 		'GET',
 		true);
+		//Muestra los audios en pantalla
 	if(audiosResult.ok){
 		showSounds(audiosResult.sounds);
 	}
