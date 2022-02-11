@@ -1,0 +1,50 @@
+{
+	"short_name": "Deep Feels",
+  "name": "Deep Feels",
+	"start_url": "public/index.html",
+	"background_color": "#f4f4fa",
+	"display": "standalone",
+	"orientation": "portrait",
+	"icons": [
+    {
+      "src": "public/pages/icons/logo_deep_feels_72x72.jpg",
+      "type": "image/jpg",
+      "sizes": "72x72"
+    },
+		{
+      "src": "public/pages/icons/logo_deep_feels_96x96.jpg",
+      "type": "image/jpg",
+      "sizes": "96x96"
+    },
+		{
+      "src": "public/pages/icons/logo_deep_feels_128x128.jpg",
+      "type": "image/jpg",
+      "sizes": "128x128"
+    },
+		{
+      "src": "public/pages/icons/logo_deep_feels_144x144.jpg",
+      "type": "image/jpg",
+      "sizes": "144x144"
+    },
+		{
+      "src": "public/pages/icons/logo_deep_feels_152x152.jpg",
+      "type": "image/jpg",
+      "sizes": "152x152"
+    },
+		{
+      "src": "public/pages/icons/logo_deep_feels_192x192.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192"
+    },
+		{
+      "src": "public/pages/icons/logo_deep_feels_384x384.jpg",
+      "type": "image/jpg",
+      "sizes": "384x384"
+    },
+		{
+      "src": "public/pages/icons/logo_deep_feels_512x512.jpg",
+      "type": "image/jpg",
+      "sizes": "512x512"
+    }
+  ]
+}
