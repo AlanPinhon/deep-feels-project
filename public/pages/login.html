@@ -10,6 +10,14 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+		<!-- Manifest -->
+		<link rel="manifest" href="../manifest.json">
+
+		<!-- Theme Color Android -->
+		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f4fa">
+		<meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#232027">
+
   </head>
   <body class="light-mode">
 		<div class="container">
@@ -50,5 +58,15 @@
 
 		<script src="../bundle/js/darkModeApp.js"></script>
 		<script src="../bundle/js/login.js"></script>
+
+		<!-- SW -->
+		<script>
+			if('serviceWorker' in navigator) {
+				navigator
+					.serviceWorker
+					.register('../sw.js')
+			}
+		</script>
+
 	</body>
 </html>
