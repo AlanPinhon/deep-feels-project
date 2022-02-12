@@ -3,7 +3,7 @@
   "name": "Deep Feels",
 	"start_url": "/pages/login.html",
 	"background_color": "#f4f4fa",
-	"display": "standalone",
+	"display": "fullscreen",
 	"orientation": "portrait",
 	"icons": [
     {
