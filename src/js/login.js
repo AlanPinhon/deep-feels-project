@@ -4,12 +4,6 @@ import { USER_ID, USER_TOKEN, USER_DATA } from "../constants/keysStorage";
 import { userAuthenticated } from "../utils/userAuthenticated";
 import { redirect } from "../utils/redirect";
 
-//Service Worker
-
-if(navigator.serviceWorker){
-	navigator.serviceWorker.register('/sw.js');
-}
-
 const formLogin = document.querySelector('form');
 const emailLogin = document.querySelector('#email');
 const passwordLogin = document.querySelector('#pass');

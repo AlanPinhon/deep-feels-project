@@ -177,17 +177,17 @@
 
 .msg-profile-changes{
 	position: absolute;
-	bottom: 5rem;
+	top: -15rem;
 	display: flex;
 	background: #fff;
 	border-radius: .5rem;
 	padding: .75rem 1.2rem;
 	opacity: 0;
 	color: #000;
-	transition: .5s ease-in-out;
+	transition: .75s ease-in-out;
 
 	&.active{
-		bottom: 15rem;
+		top: 3.25rem;
 		opacity: 1;
 	}
 
